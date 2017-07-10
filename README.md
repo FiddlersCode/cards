@@ -1,4 +1,4 @@
-# Instagram
+# Card Program
 by Paula Muldoon
 
 ---
@@ -9,7 +9,7 @@ Clone the repo. Then:
 ```bash
 bundle install
 ```
-#### To run the tests
+#### To run the tests
 ```bash
 rspec
 ```
@@ -21,7 +21,7 @@ rspec
 ---
 ## Technologies used
 
-* [Ruby 2.4.0](https://www.ruby-lang.org/en/) as the main back-end language
+* [Ruby 2.4.0](https://www.ruby-lang.org/en/)
 
 ## Instructions
 (Done in Ruby)
