@@ -12,7 +12,7 @@ describe Game do
       n += 1
     end
   end
-  #
+
   # it 'expects the shuffle method to work' do
   #   game.deck.shuffle!
   #   n = 0
@@ -25,14 +25,22 @@ describe Game do
 
   describe 'deal' do
     before :each do
-      game.deal
+      game.deal_hand
     end
     it 'should deal 7 cards to each player' do
-      expect(game.player1.hand.length).to eq 7
+      expect(game.player0.hand.length).to eq 7
+    end
+
+    it 'should remove cards from the array when dealt' do
+      expect(game.deck.length).to eq 24
     end
 
     it 'does not deal the same card to each player' do
-      expect(game.player0.hand[0]).not_to eq (game.player1.hand[0]) || (game.player2.hand[0]) || (game.player3.hand[0])
+      n = 0
+      while n <= 6
+        expect(game.player0.hand[n]).not_to eq (game.player1.hand[n]) || (game.player2.hand[n]) || (game.player3.hand[n])
+        n += 1
+      end
     end
   end
 end

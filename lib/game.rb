@@ -1,4 +1,4 @@
-require 'player'
+require_relative 'player'
 class Game
   attr_reader :deck, :player0, :player1, :player2, :player3
 
@@ -12,10 +12,10 @@ class Game
     @player3 = Player.new
   end
 
-  def deal
-    7.times {@player0.hand.push(deck.shuffle.pop)}
-    7.times {@player1.hand.push(deck.shuffle.pop)}
-    7.times{@player2.hand.push(deck.shuffle.pop)}
-    7.times{@player3.hand.push(deck.shuffle.pop)}
+  def deal_hand
+    7.times {@player0.hand.push(@deck.shuffle!.pop)}
+    7.times {@player1.hand.push(@deck.shuffle!.pop)}
+    7.times{@player2.hand.push(@deck.shuffle!.pop)}
+    7.times{@player3.hand.push(@deck.shuffle!.pop)}
   end
 end
