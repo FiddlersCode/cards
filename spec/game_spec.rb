@@ -12,22 +12,27 @@ describe Game do
       n += 1
     end
   end
+  #
+  # it 'expects the shuffle method to work' do
+  #   game.deck.shuffle!
+  #   n = 0
+  #   while n <= 51
+  #     expect(game.deck[n]).not_to eq n
+  #     n += 1
+  #   end
+  # end
 
-  xit 'expects the shuffle method to work' do
-    game.deck.shuffle!
-    n = 0
-    while n <= 51
-      expect(game.deck[n]).not_to eq n
-      n += 1
+
+  describe 'deal' do
+    before :each do
+      game.deal
     end
-  end
+    it 'should deal 1 card to each player' do
+      expect(game.player1.hand.length).to eq 1
+    end
 
-  it 'should have a deal method' do
-    expect(game).to respond_to(:deal)
-  end
-
-  it 'should deal 1 card to each player' do
-    game.deal
-    expect(game.player1.hand.length).to eq 1
+    it 'does not deal the same card to each player' do
+      expect(game.player0.hand[0]).not_to eq (game.player1.hand[0]) || (game.player2.hand[0]) || (game.player3.hand[0])
+    end
   end
 end
