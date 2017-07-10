@@ -6,10 +6,10 @@ describe Game do
   end
 
   it 'expects the deck to be in order' do
-    n = 0
-    while n <= 51
+    n = 51
+    while n <= 0
       expect(game.deck[n]).to eq n
-      n += 1
+      n -= 1
     end
   end
 
