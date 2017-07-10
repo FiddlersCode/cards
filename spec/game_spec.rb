@@ -12,4 +12,13 @@ describe Game do
       n += 1
     end
   end
+
+  it 'expects the shuffle method to work' do
+    game.deck.shuffle!
+    n = 0
+    while n <= 51
+      expect(game.deck[n]).not_to eq n
+      n += 1
+    end
+  end
 end
