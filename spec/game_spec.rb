@@ -28,19 +28,13 @@ describe Game do
       game.deal_hand
     end
     it 'should deal 7 cards to each player' do
-      expect(game.player0.hand.length).to eq 7
+      game.players do | player |
+        expect(player.hand.length).to eq 7
+      end
     end
 
     it 'should remove cards from the array when dealt' do
       expect(game.deck.length).to eq 24
-    end
-
-    it 'does not deal the same card to each player' do
-      n = 0
-      while n <= 6
-        expect(game.player0.hand[n]).not_to eq (game.player1.hand[n]) || (game.player2.hand[n]) || (game.player3.hand[n])
-        n += 1
-      end
     end
   end
 end
