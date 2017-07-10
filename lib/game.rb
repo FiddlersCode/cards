@@ -13,9 +13,9 @@ class Game
   end
 
   def deal
-    @player0.hand.push(deck.shuffle.pop)
-    @player1.hand.push(deck.shuffle.pop)
-    @player2.hand.push(deck.shuffle.pop)
-    @player3.hand.push(deck.shuffle.pop)
+    7.times {@player0.hand.push(deck.shuffle.pop)}
+    7.times {@player1.hand.push(deck.shuffle.pop)}
+    7.times{@player2.hand.push(deck.shuffle.pop)}
+    7.times{@player3.hand.push(deck.shuffle.pop)}
   end
 end

@@ -27,8 +27,8 @@ describe Game do
     before :each do
       game.deal
     end
-    it 'should deal 1 card to each player' do
-      expect(game.player1.hand.length).to eq 1
+    it 'should deal 7 cards to each player' do
+      expect(game.player1.hand.length).to eq 7
     end
 
     it 'does not deal the same card to each player' do
