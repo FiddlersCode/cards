@@ -12,8 +12,10 @@ class Game
   end
 
   def deal_hand
-    7.times { @players.each do | player |
-      player.hand.push(@deck.shuffle!.pop)
-    end }
+    7.times do
+      @players.each do | player |
+        player.hand.push(@deck.shuffle!.pop)
+      end
+    end
   end
 end
