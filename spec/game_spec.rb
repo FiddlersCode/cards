@@ -13,16 +13,6 @@ describe Game do
     end
   end
 
-  # it 'expects the shuffle method to work' do
-  #   game.deck.shuffle!
-  #   n = 0
-  #   while n <= 51
-  #     expect(game.deck[n]).not_to eq n
-  #     n += 1
-  #   end
-  # end
-
-
   describe 'deal' do
     before :each do
       game.deal_hand

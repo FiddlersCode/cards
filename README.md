@@ -14,6 +14,8 @@ bundle install
 rspec
 ```
 
+[Diagram](https://drive.google.com/file/d/0B1tialTcWTRJV0pqdURwam03VXM/view?usp=sharing)
+
 ---
 ## Processes
 * TDD
@@ -22,6 +24,7 @@ rspec
 ## Technologies used
 
 * [Ruby 2.4.0](https://www.ruby-lang.org/en/)
+* [RSpec](http://rspec.info/)
 
 ## Instructions
 (Done in Ruby)
@@ -45,3 +48,22 @@ Shuffle the cards  - We would like to take the deck that is in sequence and shuf
 Deal the cards - We would then like to deal seven cards to each player (one card to the each player, then a second card to each player, and so on)
 
 There is no need to necessarily do this in a visual way (for example, simply proving with a test that your deck is shuffled and that the players do now have seven cards will be sufficient)
+
+## Notes
+I did not include a test for the `shuffle` method as this is a Ruby core method and thus can be trusted to be stable.  
+
+A test for this could look like:
+```
+it 'expects the shuffle method to work' do
+  game.deck.shuffle!
+  n = 0
+  while n <= 51
+    expect(game.deck[n]).not_to eq n
+    n += 1
+  end
+end
+```
+
+This test passes randomly, because the shuffle method does not necessarily alter every single item in the array.  
+However, I believe that in the context of a poker game, `shuffle` is sufficiently randomised.  I could of course stub
+this test to return a specific type of shuffled array, but this test would be vacuous.
