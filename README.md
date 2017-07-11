@@ -14,7 +14,7 @@ bundle install
 rspec
 ```
 
-[Diagram](https://drive.google.com/file/d/0B1tialTcWTRJV0pqdURwam03VXM/view?usp=sharing)
+#### [Diagram](https://drive.google.com/file/d/0B1tialTcWTRJV0pqdURwam03VXM/view?usp=sharing)
 
 ---
 ## Processes
